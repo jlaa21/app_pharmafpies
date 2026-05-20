@@ -1,7 +1,13 @@
 import type {NextConfig} from 'next';
 
 const nextConfig: NextConfig = {
-  /* config options here */
+ // Fuerza la generación de archivos HTML/CSS/JS puros en la carpeta 'out'
+  output: 'export',
+  // Cloudflare Pages requiere imágenes sin procesar en modo estático
+  images: {
+    unoptimized: true,
+  },
+  // Evita que el build se detenga por errores de linting o tipos
   typescript: {
     ignoreBuildErrors: true,
   },
